@@ -1,0 +1,173 @@
+.journey-grid .cloud{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:1 / 1!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:visible!important;
+  container-type:inline-size!important;
+  isolation:isolate!important;
+  transform:none!important;
+}
+.journey-grid .cloud-bg{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  object-fit:contain!important;
+  filter:none!important;
+  transition:none!important;
+  animation:none!important;
+}
+.journey-grid .cloud-content{
+  position:relative!important;
+  inset:auto!important;
+  z-index:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  box-sizing:border-box!important;
+  width:78%!important;
+  max-width:78%!important;
+  height:82%!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:7.5% 0 6.5%!important;
+  text-align:center!important;
+  transform:none!important;
+  transform-origin:center!important;
+}
+.journey-grid .cloud-content .cloud-number{
+  position:static!important;
+  inset:auto!important;
+  z-index:auto!important;
+  display:block!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  height:auto!important;
+  margin:0 0 2.2cqw!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--accent)!important;
+  font-size:clamp(8px,3.5cqw,13px)!important;
+  line-height:1!important;
+  letter-spacing:.04em!important;
+  text-align:center!important;
+  transform:none!important;
+  transition:none!important;
+  animation:none!important;
+}
+.journey-grid .cloud-content .cloud-icon{
+  display:grid!important;
+  place-items:center!important;
+  flex:0 0 auto!important;
+  width:clamp(22px,14.2cqw,46px)!important;
+  height:clamp(20px,13cqw,42px)!important;
+  margin:0 auto 1.7cqw!important;
+}
+.journey-grid .cloud-content .cloud-icon svg{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+}
+.journey-grid .cloud-content h3,
+.journey-grid .cloud-content p,
+.journey-grid .cloud-content .micro,
+.journey-grid .cloud-content .cloud-foot{
+  position:static!important;
+  display:block!important;
+  flex:0 0 auto!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  text-align:center!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  transform:none!important;
+}
+.journey-grid .cloud-content h3{
+  margin-top:0!important;
+  margin-bottom:1.6cqw!important;
+  font-size:clamp(9px,4.55cqw,16.5px)!important;
+  line-height:1.22!important;
+  letter-spacing:.01em!important;
+  color:var(--ink)!important;
+}
+.journey-grid .cloud-content p{
+  margin-top:0!important;
+  margin-bottom:1.6cqw!important;
+  font-size:clamp(8px,3.65cqw,13.5px)!important;
+  line-height:1.4!important;
+  color:var(--body,#5b6a85)!important;
+}
+.journey-grid .cloud-content .micro{
+  margin-top:0!important;
+  margin-bottom:0!important;
+  font-size:clamp(7px,2.9cqw,11px)!important;
+  line-height:1.25!important;
+  letter-spacing:.025em!important;
+  color:var(--accent)!important;
+}
+.journey-grid .cloud-content .cloud-foot{
+  margin-top:auto!important;
+  padding-top:1.6cqw!important;
+  font-size:clamp(7.5px,3.05cqw,12px)!important;
+  line-height:1.25!important;
+  color:var(--accent)!important;
+  border-top:1px dotted var(--edge)!important;
+}
+.journey-grid .cloud:hover,
+.journey-grid .cloud:hover .cloud-bg,
+.journey-grid .cloud:hover .cloud-content{
+  transform:none!important;
+  filter:none!important;
+}
+@media(max-width:900px){
+  .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:720px!important;gap:18px!important}
+}
+@media(max-width:620px){
+  .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:none!important;gap:13px 10px!important}
+  .journey-grid .cloud-content{width:79%!important;max-width:79%!important;height:84%!important;padding-top:7%!important;padding-bottom:5.5%!important}
+  .journey-grid .cloud-content .cloud-number{margin-bottom:1.7cqw!important}
+  .journey-grid .cloud-content .cloud-icon{width:clamp(20px,14cqw,34px)!important;height:clamp(19px,12.5cqw,31px)!important;margin-bottom:1.3cqw!important}
+  .journey-grid .cloud-content h3{font-size:clamp(8px,4.6cqw,12.5px)!important;line-height:1.18!important;margin-bottom:1.3cqw!important}
+  .journey-grid .cloud-content p{font-size:clamp(7px,3.55cqw,10px)!important;line-height:1.32!important;margin-bottom:1.2cqw!important}
+  .journey-grid .cloud-content .micro{font-size:clamp(6px,2.85cqw,8.5px)!important;line-height:1.2!important}
+  .journey-grid .cloud-content .cloud-foot{font-size:clamp(6.5px,3.0cqw,9px)!important;line-height:1.2!important;padding-top:1.2cqw!important}
+}
+@media(max-width:360px){
+  .journey-grid{gap:10px 8px!important}
+  .journey-grid .cloud-content{width:81%!important;max-width:81%!important;height:86%!important}
+  .journey-grid .cloud-content h3{font-size:clamp(7.5px,4.4cqw,10.5px)!important}
+  .journey-grid .cloud-content p{font-size:clamp(6.8px,3.35cqw,8.5px)!important}
+}
+
+.pl-table{table-layout:fixed;width:100%;}
+.pl-table th:nth-child(1),.pl-table td:nth-child(1){width:31%;}
+.pl-table th:nth-child(2),.pl-table td:nth-child(2){width:18%;}
+.pl-table th:nth-child(3),.pl-table td:nth-child(3){width:20%;}
+.pl-table th:nth-child(4),.pl-table td:nth-child(4){width:14%;}
+.pl-table th:nth-child(5),.pl-table td:nth-child(5){width:17%;}
+.pl-table th,.pl-table td{overflow-wrap:anywhere;}
+@media(max-width:620px){
+  .pl-table{table-layout:fixed;width:100%;}
+  .pl-table th:nth-child(1),.pl-table td:nth-child(1){width:48%;}
+  .pl-table th:nth-child(2),.pl-table td:nth-child(2){width:24%;}
+  .pl-table th:nth-child(5),.pl-table td:nth-child(5){width:28%;}
+}

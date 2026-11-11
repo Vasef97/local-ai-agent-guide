@@ -1,0 +1,1 @@
+document.querySelectorAll('.sec-tab').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.agent;document.querySelectorAll('.sec-tab').forEach(x=>{const on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',String(on))});document.querySelectorAll('#security .security-card[data-agent]').forEach(c=>{c.hidden=c.dataset.agent!==k})}));
