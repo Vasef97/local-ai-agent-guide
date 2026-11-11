@@ -1,0 +1,40 @@
+.cloud-bg,
+.cloud-bg path{
+  transition:none!important;
+  animation:none!important;
+}
+.cloud-bg{transition:none!important}
+#puse{
+  font-variant-numeric:tabular-nums;
+  transition:none!important;
+  animation:none!important;
+}
+:root[data-theme="dark"] .journey-grid .cloud-bg{
+  filter:none!important;
+  transition:none!important;
+}
+:root[data-theme="dark"] .journey-grid .cloud-bg path{
+  fill:var(--surface)!important;
+  stroke:none!important;
+  stroke-width:0!important;
+  transition:none!important;
+}
+:root[data-theme="dark"] .journey-grid .cloud .micro,
+:root[data-theme="dark"] .journey-grid .cloud .cloud-foot,
+:root[data-theme="dark"] .journey-grid .cloud .cloud-number,
+:root[data-theme="dark"] .journey-grid .cloud .cloud-icon{
+  color:var(--accent)!important;
+}
+:root[data-theme="dark"] .fam:nth-child(1){--a:#a9d9bc!important;--e:#47634f!important}
+:root[data-theme="dark"] .fam:nth-child(2){--a:#a7d8ec!important;--e:#405e70!important}
+:root[data-theme="dark"] .fam:nth-child(3){--a:#c2b4f5!important;--e:#574d78!important}
+:root[data-theme="dark"] .fam:nth-child(4){--a:#f0b58e!important;--e:#76533d!important}
+:root[data-theme="dark"] .fam:nth-child(5){--a:#efabc6!important;--e:#75485d!important}
+:root[data-theme="dark"] .fam:nth-child(6){--a:#e9d58d!important;--e:#72643b!important}
+:root[data-theme="dark"] .fam small,
+:root[data-theme="dark"] .fam em,
+:root[data-theme="dark"] .fam .fam-visit{
+  color:var(--a)!important;
+  border-color:var(--e)!important;
+}
+:root[data-theme="dark"] .fam .fam-visit span{color:inherit!important}

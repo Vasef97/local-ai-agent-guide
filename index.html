@@ -1,0 +1,268 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#f7f9fd" name="theme-color"/>
+<title>Build Your Local AI Agent</title>
+<meta content="A practical guide to local AI agents, from hardware and models to Hermes Agent, Goose, tools, memory and safer execution." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<link rel="stylesheet" href="assets/css/theme-overrides.css"/>
+<link rel="stylesheet" href="assets/css/section-overrides.css"/>
+<link rel="stylesheet" href="assets/css/motion-overrides.css"/>
+<link rel="stylesheet" href="assets/css/responsive.css"/>
+<link rel="stylesheet" href="assets/css/infographics.css"/>
+
+<script src="assets/js/theme-init.js"></script>
+</head>
+<body>
+<nav aria-label="Main navigation" class="nav"><div class="wrap nav-inner">
+<a class="brand" href="#top"><span aria-hidden="true" class="brand-mark">✳</span><span>Local AI Agent Guide</span></a>
+<div class="nav-links" id="navLinks"><a href="#journey">Overview</a><a href="#loop">Agent loop</a><a href="#concepts">Concepts</a><a href="#paths">Choose an agent</a><a href="#security">Security</a><a href="#launch">Launch</a><a href="#downloads">Downloads</a><a href="#references">References</a></div>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5 8.6 8.6 0 1 0 20.5 15.2Z"></path></svg></span><span class="theme-label">Dark mode</span></button>
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" id="menuToggle"><svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24" width="22"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div></nav>
+<main>
+<header class="hero" id="top">
+<div class="blob" style="width:300px;height:260px;background:var(--blue);left:-60px;top:40px"></div>
+<div class="blob" style="width:240px;height:220px;background:var(--lav);right:-40px;top:70px;animation-delay:-4s"></div>
+<div class="blob" style="width:200px;height:180px;background:var(--peach);left:12%;bottom:-40px;animation-delay:-7s"></div>
+<div class="blob" style="width:220px;height:200px;background:var(--mint);right:14%;bottom:-50px;animation-delay:-2s"></div>
+<div class="wrap"><a class="tag hero-author" href="https://www.linkedin.com/in/vasilis-efstathiou/" target="_blank" rel="noopener noreferrer">A guide by Vasilis Efstathiou</a>
+<h1>Build Your Local AI Agent</h1>
+<p class="sub">A practical guide from model selection to a working assistant</p>
+<p class="lead">Learn how hardware, runtimes, models, agent applications, tools, memory and safeguards fit together. Then follow a complete setup path with Hermes Agent or Goose. Designed for beginners, students and developers.</p>
+<a class="btn" href="#journey">Start the journey</a><a class="btn o" href="#paths">Jump to the setup paths</a></div></header>
+<section class="journey" id="journey"><div class="wrap section-inner">
+<div class="kicker">The big picture</div><h2>Six steps from your machine to a working agent</h2>
+<p class="intro">This is a learning workflow, not a rigid sequence. Runtime and model choices often influence one another. Security matters at every stage.</p>
+<div class="journey-grid">
+<article class="cloud" style="--tint:var(--blue);--edge:var(--blue-line);--accent:var(--blue-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M31.8 226.1L29.7 231.0L21.8 236.3L14.9 242.8L9.5 250.3L6.6 256.2L4.0 265.0L3.0 274.5L3.4 281.0L5.5 290.0L9.5 298.8L17.1 308.7L24.6 314.8L36.2 321.4L45.7 337.7L59.3 352.1L63.3 365.7L68.1 374.6L76.7 384.4L84.9 390.3L94.0 394.4L103.4 396.6L110.3 397.0L120.1 396.0L129.4 393.2L135.5 390.2L143.6 384.4L151.9 375.5L156.4 374.1L160.3 375.4L168.1 382.4L174.8 386.9L185.7 391.9L197.7 394.6L213.5 394.6L225.2 391.9L232.8 388.8L243.0 382.4L253.7 372.3L257.6 371.1L261.5 372.3L274.8 382.6L289.0 388.4L304.1 390.4L311.8 389.8L322.7 387.3L330.0 384.3L339.7 378.2L347.9 370.5L352.7 364.3L359.5 350.6L362.8 332.4L368.8 319.5L372.7 305.0L381.7 297.4L387.8 290.8L392.5 283.3L395.6 274.9L397.0 260.1L393.7 245.9L387.6 235.4L381.7 229.0L374.6 223.6L372.9 219.0L373.1 172.4L374.2 169.7L381.8 161.4L386.0 155.3L391.7 141.6L393.6 126.7L393.1 119.3L390.7 108.7L387.7 101.6L382.0 92.4L369.1 79.8L363.0 67.5L356.9 58.9L349.8 51.4L339.5 43.2L334.7 33.3L327.7 23.6L319.1 15.6L312.4 11.1L297.5 4.9L289.6 3.4L277.9 3.0L262.0 6.2L247.7 13.2L238.6 20.7L231.4 29.1L227.1 31.0L222.6 29.8L211.6 19.2L201.4 12.9L186.7 7.9L175.0 6.7L163.1 7.9L148.2 13.0L138.2 19.2L126.2 31.4L122.7 33.2L93.8 33.7L83.3 30.1L74.9 28.7L66.5 29.0L58.5 30.9L50.8 34.3L43.8 39.4L36.6 47.6L32.5 55.2L30.1 63.3L29.2 71.5L30.1 79.8L32.9 90.1L31.6 111.3L30.5 113.9L22.0 124.1L18.1 130.8L15.1 138.2L12.5 149.4L12.4 164.9L15.1 176.5L20.0 187.1L30.5 200.6L31.6 203.2Z"/></svg><div class="cloud-content"><span class="cloud-number">1.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><rect height="34" rx="5" width="48" x="8" y="7"></rect><path d="M20 49h24M27 41l-3 8m13-8 3 8M18 19h12m-12 7h7m17-7h5m-5 7h5"></path><circle cx="23" cy="32" r="2"></circle><circle cx="42" cy="32" r="2"></circle></svg></div><h3>CHECK YOUR SYSTEM</h3><p>Check your available memory, graphics hardware, processor and storage before choosing a model.</p><span class="micro">Hardware and resources</span><div class="cloud-foot">Know what your machine can handle</div></div></article>
+<article class="cloud" style="--tint:var(--lav);--edge:var(--lav-line);--accent:var(--lav-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M25.3 128.1L26.3 132.2L25.3 135.6L14.9 145.6L7.9 156.3L3.9 168.2L3.0 177.8L4.6 190.6L9.5 202.7L17.2 212.9L29.2 222.2L31.2 226.5L30.9 266.8L28.7 270.3L16.5 279.2L11.1 285.9L6.1 296.3L3.8 307.7L4.5 319.2L8.2 330.2L14.4 339.8L22.9 347.5L30.6 351.7L38.7 354.2L46.9 355.0L58.7 353.6L62.1 354.3L69.7 359.2L79.9 374.5L92.6 385.9L107.8 393.5L120.0 396.4L128.5 397.0L141.1 395.7L153.5 391.9L164.5 385.9L176.3 375.7L179.6 374.4L183.6 375.2L192.3 381.2L203.7 386.5L220.6 389.9L233.3 389.4L249.5 385.0L260.8 378.9L271.1 370.2L274.8 368.7L278.0 369.3L288.8 376.2L298.5 379.9L311.7 381.7L321.8 380.7L331.5 377.7L340.5 372.8L348.4 366.2L354.8 358.2L359.6 349.0L362.6 339.1L363.6 324.5L368.2 308.9L369.8 292.2L381.6 274.7L385.3 264.8L387.0 254.1L386.6 243.1L383.1 229.4L378.1 219.8L369.8 208.6L369.7 195.2L371.7 191.5L384.1 180.7L391.6 169.1L396.1 155.7L397.0 141.6L395.3 130.9L390.0 117.8L381.7 106.8L370.0 96.4L366.5 78.4L359.7 62.6L351.5 51.2L338.7 39.9L326.5 33.3L309.2 28.2L299.9 17.5L292.3 11.1L283.6 6.4L271.2 3.0L257.9 3.0L245.3 6.5L234.1 13.1L229.0 17.7L222.3 25.9L217.5 27.9L172.8 27.7L169.2 25.8L164.5 19.5L158.1 13.4L147.6 7.2L133.1 3.8L118.3 5.3L109.9 8.5L102.5 13.3L89.0 27.3L67.5 28.8L51.4 34.4L37.6 43.8L29.0 53.2L24.2 60.6L19.1 72.1L15.7 89.2L15.7 97.9L17.8 110.4L20.5 118.8Z"/></svg><div class="cloud-content"><span class="cloud-number">2.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><rect height="42" rx="7" width="40" x="12" y="8"></rect><path d="M21 18h22M21 27h22M21 36h12M32 2v6m-12 42v6m24-6v6M6 20h6m40 0h6"></path><circle cx="43" cy="36" r="4"></circle></svg></div><h3>CHOOSE A RUNTIME</h3><p>Choose the software that loads and runs a model on your computer.</p><span class="micro">Ollama · LM Studio · llama.cpp · MLX for Apple silicon</span><div class="cloud-foot">Choose the engine that fits your setup</div></div></article>
+<article class="cloud" style="--tint:var(--peach);--edge:var(--peach-line);--accent:var(--peach-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M29.8 120.0L32.0 124.5L31.5 138.2L29.5 141.0L17.2 150.5L11.0 158.4L5.4 170.4L3.0 183.2L3.8 196.7L6.5 206.0L9.3 212.0L17.2 222.7L30.0 232.7L32.0 237.1L31.7 259.8L30.1 262.8L21.0 272.2L15.7 281.9L12.8 293.1L12.8 304.6L15.6 315.4L21.0 325.3L28.9 333.6L42.6 341.9L47.7 357.2L53.3 368.2L60.9 378.1L70.5 386.3L80.9 392.2L88.8 395.0L100.5 397.0L108.8 397.0L120.5 395.0L131.8 390.5L139.0 386.2L150.0 376.4L152.6 375.2L190.0 375.1L193.4 376.0L202.4 383.9L210.7 388.5L222.2 391.7L231.5 392.0L240.5 390.5L248.8 387.2L256.5 382.1L262.7 376.4L265.9 375.1L305.3 374.9L316.6 379.1L327.1 380.9L334.2 380.9L344.5 379.1L351.4 376.6L360.8 371.3L369.0 364.2L375.7 355.6L380.6 345.9L383.0 338.6L384.7 327.8L384.7 320.1L383.0 309.3L380.6 302.0L375.7 292.4L368.5 282.0L368.4 259.9L370.7 255.8L378.1 251.3L384.4 245.8L391.3 236.5L395.7 225.4L397.0 211.0L394.8 199.2L389.8 188.6L382.5 179.9L370.7 171.8L368.5 168.3L368.5 151.1L377.9 137.0L383.1 124.9L386.0 112.0L386.4 98.6L383.2 81.5L377.9 69.2L367.8 55.5L357.9 46.9L342.9 39.1L323.5 34.7L314.6 25.9L306.5 19.8L294.4 14.5L284.6 12.8L274.7 13.1L264.8 15.6L255.9 19.8L244.6 28.8L240.9 30.0L201.5 29.7L198.7 28.0L189.7 17.6L180.6 10.8L167.1 4.9L155.9 3.0L141.3 4.0L130.4 7.5L120.6 13.0L114.7 17.8L107.5 25.6L103.9 27.2L100.6 26.7L90.2 21.0L79.5 17.6L68.4 16.5L57.4 17.7L43.3 22.7L31.0 31.4L23.5 39.8L19.4 46.3L13.7 60.7L11.7 76.1L13.7 91.8L19.4 106.2L23.5 112.7Z"/></svg><div class="cloud-content"><span class="cloud-number">3.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><path d="M32 5c-6 0-10 4-10 10-7 0-12 5-12 12 0 4 2 7 5 9-2 8 4 14 11 14 3 4 10 4 13 0 7 0 13-6 11-14 3-2 5-6 5-10 0-7-5-12-12-12 0-5-4-9-11-9z"></path><path d="M32 8v39M22 18c5 0 7 4 10 7m10-7c-5 0-7 4-10 7M18 34c6-1 9 3 14 2m14-2c-6-1-9 3-14 2"></path></svg></div><h3>SELECT A MODEL</h3><p>Balance the model’s capabilities, tool support, context length, license and memory use.</p><span class="micro">Qwen · Llama · Mistral · Gemma</span><div class="cloud-foot">Fit the model to the task and hardware</div></div></article>
+<article class="cloud" style="--tint:var(--pink);--edge:var(--pink-line);--accent:var(--pink-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M28.6 106.8L30.5 111.8L30.3 163.7L28.4 167.4L17.2 176.1L10.6 185.2L6.2 196.1L4.8 207.7L6.2 219.0L9.2 227.3L17.2 239.0L29.3 248.8L30.4 252.1L30.4 258.9L28.6 263.2L19.6 270.9L14.7 276.7L8.9 286.4L4.9 297.4L3.0 312.4L4.9 327.6L8.9 338.6L16.9 351.1L28.0 361.3L38.0 366.8L48.6 370.1L59.6 371.2L74.6 369.4L85.3 372.5L87.8 374.0L95.7 382.9L103.5 388.6L112.4 392.9L121.9 395.2L134.9 395.2L147.5 391.7L156.3 386.8L168.0 375.7L171.0 374.2L203.1 374.1L207.0 375.3L216.8 384.9L226.3 391.0L239.9 395.9L251.1 397.0L265.4 395.0L275.6 391.0L285.0 385.0L294.4 375.7L297.4 374.2L305.5 373.9L314.5 377.0L324.9 378.8L335.2 378.4L345.4 376.0L352.1 373.1L360.9 367.4L366.3 362.5L372.8 354.2L376.5 347.7L380.1 337.7L381.5 330.3L381.8 319.6L379.1 305.1L374.8 295.3L370.3 288.2L369.8 284.0L370.8 281.4L378.8 270.2L382.0 263.3L385.1 252.7L386.1 241.6L385.1 230.6L381.9 220.0L377.0 210.4L369.0 199.2L368.8 172.1L370.6 167.8L379.2 160.3L384.4 154.1L390.7 143.6L395.0 131.9L397.0 115.6L394.9 99.3L388.9 84.3L381.9 74.1L370.2 63.4L363.1 59.2L351.0 54.4L340.6 45.1L332.0 39.4L313.7 32.0L304.9 21.8L295.6 13.9L288.4 9.5L276.9 5.0L268.9 3.4L256.9 3.0L240.7 6.3L226.3 13.7L216.9 21.8L210.5 29.1L205.3 30.8L200.7 29.0L190.0 15.7L179.3 8.3L173.5 5.8L164.5 3.6L151.8 3.6L142.4 5.9L131.3 11.6L123.9 17.8L115.9 28.5L112.9 30.4L89.8 31.6L80.0 33.9L69.1 38.0L58.6 37.0L50.7 37.8L43.0 40.2L33.9 45.7L28.1 51.3L22.4 60.2L19.6 67.9L18.3 76.0L18.6 84.4L20.4 92.4L23.7 99.8Z"/></svg><div class="cloud-content"><span class="cloud-number">4.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><rect height="32" rx="10" width="44" x="10" y="15"></rect><path d="M23 15V9h18v6M22 29h.1M42 29h.1M24 38q8 6 16 0M32 9V4"></path><circle cx="32" cy="4" r="2"></circle></svg></div><h3>ADD AN AGENT</h3><p>Choose an agent application that connects the model to tools, instructions and workflows.</p><span class="micro">Hermes Agent · Goose · Others</span><div class="cloud-foot">Give the model a way to take action</div></div></article>
+<article class="cloud" style="--tint:var(--mint);--edge:var(--mint-line);--accent:var(--mint-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M27.0 129.0L29.6 133.8L29.4 145.3L28.0 147.8L16.4 159.5L9.6 170.4L4.3 186.0L3.0 198.7L5.2 215.0L9.6 226.7L16.4 237.5L28.0 249.3L29.5 252.4L29.4 265.2L21.5 275.5L17.0 283.9L14.3 293.0L13.5 305.3L15.1 314.9L19.9 326.3L25.6 334.2L32.5 340.7L40.7 345.7L52.1 349.9L61.7 357.3L75.1 364.4L82.9 374.7L91.8 382.4L102.2 387.5L111.1 389.5L122.9 389.5L134.4 386.4L144.4 380.7L153.8 371.2L156.8 369.5L175.8 369.3L180.1 371.2L188.2 383.4L198.6 391.9L211.0 396.5L224.4 396.9L232.5 395.1L242.0 390.4L250.3 383.2L258.7 370.8L261.8 369.4L267.1 369.2L271.5 370.8L282.5 382.8L295.2 391.2L309.4 396.0L324.7 397.0L336.0 395.2L347.0 391.1L359.5 382.8L367.5 374.3L375.0 361.4L378.4 350.5L379.5 338.9L377.7 324.4L378.2 321.7L385.9 312.4L391.6 303.3L394.5 296.3L397.0 285.8L397.0 271.2L394.4 260.3L389.8 250.3L380.2 237.8L379.1 234.0L379.6 221.1L388.8 208.2L394.7 194.2L396.7 182.7L396.3 170.8L393.7 159.7L390.7 152.5L379.3 135.6L378.7 95.2L376.0 81.7L372.1 71.7L366.9 62.6L360.5 54.4L350.0 45.0L338.0 37.5L329.6 23.7L319.6 13.9L310.6 8.4L300.7 4.7L290.2 3.0L279.7 3.4L269.4 5.8L256.9 11.9L248.7 18.5L240.5 28.7L237.4 30.6L198.0 30.9L193.5 29.4L183.9 18.7L172.8 11.4L160.4 7.2L147.6 6.4L137.7 8.0L125.8 12.9L117.6 18.7L108.5 29.0L104.9 30.8L95.6 30.9L83.0 25.5L67.7 22.5L55.9 22.9L41.0 26.9L27.4 34.6L16.3 45.6L8.4 59.0L4.3 74.0L4.3 89.6L8.3 104.6L16.1 118.1Z"/></svg><div class="cloud-content"><span class="cloud-number">5.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><path d="M7 15h19l5 6h26v29H7z"></path><path d="M18 34l-5 5 5 5m13-10 5 5-5 5M44 30v18m-6-9h12"></path></svg></div><h3>CONNECT TOOLS AND MEMORY</h3><p>Give the agent limited access to the files, code, services and information it needs.</p><span class="micro">Tools · MCP · Memory · Skills · RAG</span><div class="cloud-foot">Add only what the workflow needs</div></div></article>
+<article class="cloud" style="--tint:var(--yellow);--edge:var(--yellow-line);--accent:var(--yellow-ink)"><svg class="cloud-bg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><path d="M17.0 168.7L26.4 179.1L27.3 182.4L27.1 235.3L25.2 239.0L13.1 248.9L6.9 258.3L3.0 271.5L3.5 285.3L7.0 295.7L12.9 304.7L19.0 310.5L29.4 316.6L31.2 318.6L36.1 329.5L38.1 340.9L40.6 348.4L46.3 359.2L56.4 370.9L69.4 379.8L76.9 383.0L88.1 385.6L96.2 386.2L107.6 385.0L122.5 379.9L129.4 375.8L138.8 368.2L143.5 367.2L147.7 369.5L152.4 376.6L159.2 383.9L167.6 390.1L176.7 394.3L183.2 396.1L197.0 397.0L210.3 394.3L222.2 388.3L232.4 379.2L239.8 368.3L242.0 366.6L245.3 365.7L258.6 365.8L262.4 367.4L274.4 379.4L288.6 387.7L300.8 391.5L317.4 392.6L333.7 389.2L348.6 381.7L361.1 370.5L370.2 356.7L374.6 344.6L376.8 327.8L375.5 315.2L373.4 307.0L369.1 296.9L369.0 293.4L371.0 289.7L383.9 278.7L390.0 270.1L394.3 260.3L397.0 246.7L396.1 232.4L394.3 225.6L390.1 216.2L381.5 204.9L368.9 195.1L366.9 190.8L367.0 161.2L368.6 158.0L377.9 147.2L382.8 138.0L386.2 124.7L386.2 111.0L383.9 101.0L378.0 88.9L371.6 81.0L361.3 71.8L357.4 63.7L353.2 48.9L347.3 37.7L336.4 25.1L322.8 15.9L314.9 12.6L303.0 9.8L286.3 9.8L278.1 11.4L266.7 15.8L259.3 20.1L249.1 28.1L240.9 28.5L236.7 26.6L230.3 18.8L225.1 14.2L216.3 8.6L206.4 4.8L192.7 3.0L179.2 4.8L169.3 8.6L160.5 14.2L155.3 18.8L148.9 26.6L144.7 28.5L104.1 28.4L88.0 18.6L81.9 16.5L72.9 15.0L60.5 15.8L48.5 19.9L40.8 24.8L33.9 31.2L28.5 39.0L25.6 44.8L22.9 53.9L22.1 66.3L23.7 75.9L27.9 87.2L27.5 93.2L26.1 96.4L19.1 103.3L13.3 111.5L9.2 120.8L7.0 130.4L6.9 143.9L10.4 157.0Z"/></svg><div class="cloud-content"><span class="cloud-number">6.</span><div class="cloud-icon"><svg viewbox="0 0 64 58"><path d="M32 5l21 8v14c0 14-9 22-21 27C20 49 11 41 11 27V13z"></path><path d="M21 29l7 7 15-16M7 8l5 3m40 0 5-3"></path></svg></div><h3>SECURE, TEST AND USE</h3><p>Limit access, review actions, test the setup and check important results.</p><span class="micro">Sandbox · Permissions · Tests</span><div class="cloud-foot">Trust through checks, not assumptions</div></div></article>
+</div>
+</div></section>
+<section class="loop-section" id="loop"><div class="wrap section-inner">
+<div class="kicker">Inside the agent</div><h2>The AI agent loop</h2><p class="intro">An agent follows a repeating cycle.<sup class="cite" data-k="react"></sup><sup class="cite" data-k="reflexion"></sup> Select a stage to see how the model and its tools work together.</p>
+<div class="loop-layout">
+<div aria-label="Sketch illustration of a human brain" class="brain-stage"><div class="brain-halo"></div>
+<svg aria-label="Hand drawn brain illustration" class="brain-svg" role="img" viewbox="0 0 520 420">
+<path class="outline" d="M261 81c-20-37-69-38-90-8-33-14-71 12-68 49-38 18-43 70-12 94-19 40 6 84 48 89 13 39 62 48 91 24 16 17 41 22 62 12 26 30 76 20 88-18 41-5 63-48 43-84 31-28 22-79-15-94 3-40-36-66-71-50-19-29-51-37-76-14z"></path>
+<path class="fold" d="M254 86c-18 17-23 37-13 57 8 16 2 30-12 39-18 11-18 32-1 42 16 10 18 29 4 41-14 13-9 32 7 38 15 6 20 20 17 39"></path>
+<path class="fold" d="M181 88c-18 11-26 31-18 49 8 18 1 31-16 37-18 7-22 28-9 42 12 14 9 29-6 39-14 10-13 30 2 39 10 6 16 17 14 30"></path>
+<path class="fold" d="M128 166c18-4 30 4 34 20 4 15 18 21 34 15m-59 56c20-13 40-8 48 9 7 16 23 18 35 9m-52-135c18-8 35-1 40 16 5 16 18 20 32 14"></path>
+<path class="fold" d="M272 91c17-10 39-5 47 12 8 17 23 19 38 12 18-8 37 2 37 21 0 15 10 26 26 28m-107-1c-15 11-15 29-1 41 14 12 13 29-3 40-15 11-15 30 1 41m75-87c-20-5-31 5-31 22 0 16-11 25-26 24m66 14c-22 1-32 14-27 31 4 16-4 28-21 32m-43-145c16-8 31-2 36 13 4 14 17 21 31 19"></path>
+<path class="fold" d="M205 68c-2-17 8-28 23-28 14 0 24 10 24 24m33 7c5-20 23-27 39-17 12 8 15 22 8 35"></path>
+<path class="fold" d="M168 305c10 10 25 12 37 3m85 29c12 10 31 8 39-4m-154-18c15-3 24 5 27 18"></path>
+<path class="outline" d="M252 81c4-15 10-24 20-29 15-7 31 2 33 18"></path>
+
+<path class="fold" d="M68 220q-18 8-19 25m396-112q18 2 25 17m-35 214q20 0 27-16"></path>
+</svg><div class="brain-caption">Think · Act · Learn from results</div>
+</div>
+<div class="loop-content"><div aria-label="Agent loop stages" class="loop-tabs" role="tablist">
+<button aria-selected="true" class="loop-tab" data-stage="0" style="--tab-bg:var(--blue);--tab-edge:var(--blue-line);--tab-ink:var(--blue-ink)">01 · Plan</button>
+<button aria-selected="false" class="loop-tab" data-stage="1" style="--tab-bg:var(--peach);--tab-edge:var(--peach-line);--tab-ink:var(--peach-ink)">02 · Act</button>
+<button aria-selected="false" class="loop-tab" data-stage="2" style="--tab-bg:var(--mint);--tab-edge:var(--mint-line);--tab-ink:var(--mint-ink)">03 · Observe</button>
+<button aria-selected="false" class="loop-tab" data-stage="3" style="--tab-bg:var(--lav);--tab-edge:var(--lav-line);--tab-ink:var(--lav-ink)">04 · Reflect</button>
+</div>
+<article class="loop-detail" id="loopDetail" style="--tab-bg:var(--blue);--tab-edge:var(--blue-line);--tab-ink:var(--blue-ink)"><h3>Choose the next step</h3><p>The model reads the goal and the current context, then plans the next step.</p><strong>Turn the request into an actionable plan</strong></article>
+<div class="loop-controls"><button aria-label="Previous stage" id="loopPrev">←</button><button aria-label="Next stage" id="loopNext">→</button></div>
+</div>
+</div>
+</div></section>
+<section class="concepts-section" id="concepts"><div class="wrap section-inner">
+<div class="kicker">Good to know</div><h2>Three ideas worth understanding</h2><p class="intro">These concepts explain how models work, how agents retain information and where execution risks can arise.</p>
+<div class="concepts-grid">
+<article class="concept-card" style="--tint:var(--mint);--edge:var(--mint-line);--accent:var(--mint-ink)"><div class="concept-icon"><svg viewbox="0 0 32 32"><path d="M16 5c-4-4-11-1-11 5-4 3-3 9 1 11-1 5 4 8 8 6 1 2 4 2 5 0 4 2 9-1 8-6 4-2 5-8 1-11 0-6-7-9-12-5zM16 5v21m-6-14c3 0 4 2 6 4m6-4c-3 0-4 2-6 4"></path></svg></div><h3>Memory is not training</h3><p>An agent can store selected preferences and project details in persistent memory. Retrieval augmented generation (RAG) searches an external collection and adds relevant information to a request when needed.<sup class="cite" data-k="rag"></sup> Skills provide reusable instructions for specific tasks.</p><p>These mechanisms help an agent access information across tasks and sessions, but they do not update the model’s learned weights. Training or fine tuning is a separate process.</p><div class="concept-tag">Recall · Retrieval · Instructions</div></article>
+<article class="concept-card center" style="--tint:var(--peach);--edge:var(--peach-line);--accent:var(--peach-ink)"><div class="concept-icon"><svg viewbox="0 0 32 32"><rect height="22" rx="5" width="24" x="4" y="5"></rect><path d="M10 11h12M10 16h12M10 21h7"></path><path d="M23 22l3 3 4-6"></path></svg></div><h3>Model size and context</h3><p>Parameters are learned numerical values, often called weights. Tokens are pieces of text processed by a model. Larger models can perform better on some tasks, but they generally require more memory and computing power.</p><p>Quantization stores model weights at lower numerical precision to reduce memory use. Its effect on quality depends on the model, quantization method and task<sup class="cite" data-k="kbit"></sup>. The context window limits how much input, conversation history, and generated output a model can process in a single request.</p><p>Longer context windows require additional memory for the key value (KV) cache<sup class="cite" data-k="kwon"></sup>. If memory becomes constrained, the runtime may need to offload data, reduce the available context, or run more slowly.</p><div class="concept-tag">Parameters · Tokens · Quantization · Context</div></article>
+<article class="concept-card" style="--tint:var(--yellow);--edge:var(--yellow-line);--accent:var(--yellow-ink)"><div class="concept-icon"><svg viewbox="0 0 32 32"><path d="M16 3l11 4v8c0 7-4 11-11 14C9 26 5 22 5 15V7z"></path><path d="M10 16l4 4 8-9"></path></svg></div><h3>Control access and execution</h3><p>Sandboxing limits where commands can run and which resources they can access. The principle of least privilege means an agent should receive only the access required for its task<sup class="cite" data-k="saltzer"></sup><sup class="cite" data-k="owasp"></sup>. Approval settings let you review sensitive actions.</p><p>Logs, tests and human review help catch mistakes. Containers add a layer of isolation, but their protection depends on their configuration, mounted folders, network access and the host system.<sup class="cite" data-k="dockersec"></sup></p><div class="concept-tag">Isolation · Permissions · Verification</div></article>
+</div>
+</div></section>
+<section class="paths-section" id="paths"><div class="wrap section-inner">
+<div class="kicker">Choose your setup</div><h2>Two ways to build your agent</h2><p class="intro">Both options connect a language model to tools and workflows. They differ in their interfaces, local model setup and approach to memory and extensions.</p>
+<h3 style="text-align:center;font-size:16px;margin:0 0 15px">Start with the shared groundwork</h3>
+<div class="shared-grid">
+<article class="shared-card"><span class="shared-number">01</span><div><h3>Check your hardware</h3><p>Record your available memory, processor, graphics hardware and free storage. Together, these factors help determine which models your machine can run and how well they perform.</p></div></article>
+<article class="shared-card planner" id="planner" aria-labelledby="plTitle"><div class="pl-head"><span class="pl-kick">Memory planner</span><h3 id="plTitle">Estimate your memory budget</h3><p>As a rough guide, 4 bit weights need about 0.5 GB per billion parameters and 16 bit weights about 2 GB, before overhead<sup class="cite" data-k="kbit"></sup>. The planner takes selected Ollama download sizes, multiplies them by 1.2, adds 2 GB for context and runtime, and compares the result with 70% of the memory you select. This is a conservative planning heuristic, not a guarantee. Move the slider to compare examples.</p></div>
+<div class="pl-ctl"><label for="pmem">Memory accessible to the model runtime <small>Select the memory pool your runtime can use. Do not add separate system RAM and GPU memory unless the runtime can access them as one pool.</small></label><output id="pout" for="pmem">16 GB</output></div>
+<input id="pmem" type="range" min="0" max="7" step="1" value="1" aria-valuetext="16 GB"><div class="pl-ticks" aria-hidden="true"></div>
+<div class="pl-bar" aria-hidden="true"><i id="pfill"></i></div>
+<div class="pl-stats"><div><small>Planning budget (70%)</small><b id="puse">11 GB</b></div><div><small>Largest dense model listed within the estimate</small><b id="pmax">about 9B</b></div></div>
+<div class="pl-wrap"><table class="pl-table"><thead><tr><th>Model</th><th>Parameters</th><th>Ollama tag</th><th>Download, GB</th><th>Planning estimate, GB</th></tr></thead><tbody id="pbody"></tbody></table></div>
+<ul class="pl-notes"><li>Sizes are snapshots of selected Ollama tags checked on 10 November 2026. Download size is not total memory use: quantization, context length and runtime buffers change the real requirement.</li><li>Longer contexts increase KV cache memory<sup class="cite" data-k="kwon"></sup>. According to the University of Virginia’s memory estimate for Gemma 3 27B, an INT4 setup requires about 17.6 GB at 4K tokens and 27.4 GB at 32K tokens<sup class="cite" data-k="uva"></sup>.</li><li>On Apple silicon the CPU and GPU share unified memory, and the usable GPU share depends on the device<sup class="cite" data-k="applesilicon"></sup>.</li><li>Mixture of experts models need memory for all experts, even though only some are active per token<sup class="cite" data-k="deepseek"></sup><sup class="cite" data-k="gptoss"></sup>. Gemma 4 E2B and E4B use E for effective parameters, and their total counts are higher<sup class="cite" data-k="gemma4"></sup>.</li></ul></article>
+<article class="shared-card"><span class="shared-number">02</span><div><h3>Choose a model with tool support</h3><p>Choose a model that supports the tool calling format expected by your agent runtime, provides enough context for your tasks and fits within your available memory.</p></div></article>
+<article class="shared-card planner models" id="models" aria-labelledby="mdTitle"><div class="pl-head"><span class="pl-kick">Model families</span><h3 id="mdTitle">Models worth knowing</h3><p>Each family has different capabilities, sizes and licensing terms. Choose a specific model for your task, check its requirements and license, and test it with your own prompts and tools.</p></div>
+<div class="fam-grid" id="fam"></div>
+<div class="tool-note"><h4>Is tool support relevant? Yes, for agents.</h4><p>An agent can ask its runtime to call a named tool and provide the required arguments. The runtime then validates the request and executes the action<sup class="cite" data-k="ollamatools"></sup>. A model must support the tool calling format expected by the agent runtime and return valid arguments. Otherwise, the action may fail or produce an unusable result. In Ollama, you can filter the library by the tools tag and read its tool calling guide<sup class="cite" data-k="ollamatools"></sup>. Reliability varies by model, task, and runtime, so test the exact combination you plan to use.</p><a class="lk" href="https://docs.ollama.com/capabilities/tool-calling" target="_blank" rel="noopener">Tool calling guide</a><a class="lk" href="https://ollama.com/search?c=tools" target="_blank" rel="noopener">Models with tools</a></div></article>
+<article class="shared-card"><span class="shared-number">03</span><div><h3>Choose the agent you want to set up</h3><p>Select Hermes Agent or Goose below to view its setup instructions.<sup class="cite" data-k="hermesdoc"></sup><sup class="cite" data-k="goosedoc"></sup></p></div></article>
+</div>
+<div aria-label="Choose an agent" class="agent-choices" role="group">
+<button aria-pressed="true" class="agent-choice" data-path="hermes" id="choiceHermes" style="--choice-tint:var(--pink);--choice-edge:var(--pink-line);--choice-ink:var(--pink-ink)">
+<span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 4c-4-3-9 0-9 5-4 2-4 8 0 10-1 5 4 8 8 5 1 3 4 3 5 0 4 3 9 0 8-5 4-2 4-8 0-10 0-5-5-8-9-5zM16 5v19m-6-13c3 0 4 2 6 4m6-4c-3 0-4 2-6 4"></path></svg></span>
+<span class="choice-copy"><strong>Hermes Agent</strong><small>Personal assistant · Persistent memory · Skills</small></span>
+<span class="choice-check" aria-hidden="true">Selected</span></button>
+<button aria-pressed="false" class="agent-choice" data-path="goose" id="choiceGoose" style="--choice-tint:var(--yellow);--choice-edge:var(--yellow-line);--choice-ink:var(--yellow-ink)">
+<span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 16c0-6 4-10 11-10 6 0 10 4 10 10v8H7v-8z"></path><path d="M10 15h.1M22 15h.1M12 20q4 3 8 0M16 6V3m-3 22v3m6-3v3"></path><path d="M26 11l4-2-2 5"></path></svg></span>
+<span class="choice-copy"><strong>Goose</strong><small>General purpose agent · MCP extensions · Automation</small></span>
+<span class="choice-check" aria-hidden="true">Select</span></button>
+</div>
+<div class="path-panel" id="pathPanel" style="--path-tint:var(--pink);--path-edge:var(--pink-line);--path-ink:var(--pink-ink)">
+<div class="path-heading"><h3 id="pathTitle">Path A · Set up Hermes Agent</h3><span class="path-chip" id="pathChip">Graphical model setup</span></div>
+<div aria-live="polite" class="path-steps" id="pathSteps"></div>
+<div class="path-note" id="pathNote">The standard Local Models route uses Hermes managed llama.cpp. It does not install Ollama.</div>
+</div>
+</div></section>
+<section class="security-section" id="security"><div class="wrap section-inner">
+<div class="kicker">Protect your workspace</div><h2>Finally, secure, test and use</h2><p class="intro">Containers add an isolation layer by running selected agent tools away from your files and system. They reduce risk but do not guarantee safety<sup class="cite" data-k="dockersec"></sup>. Commands are for macOS, Linux and WSL2 on Windows.</p>
+<div class="sec-tabs" role="group" aria-label="Choose an agent"><button class="sec-tab on" data-agent="hermes" aria-pressed="true" type="button">Hermes Agent</button><button class="sec-tab" data-agent="goose" aria-pressed="false" type="button">Goose</button></div>
+<div class="security-grid">
+<article class="security-card">
+<div class="security-card-head"><span class="security-index">01</span><div><h3>Install Docker and create a workspace</h3><p>Install Docker Desktop, or Docker Engine on Linux, and start it. Then create one dedicated folder. It is the only folder the agent tools should see.</p></div></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Verify Docker · macOS / Linux</span><button class="copy-btn" data-copy="docker --version
+docker info">Copy</button></div><pre><code>docker --version
+docker info</code></pre></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Create shared workspace · macOS / Linux</span><button class="copy-btn">Copy</button></div><pre><code>mkdir -p "$HOME/AI_Workspace"</code></pre></div>
+<div class="resource-inline"><a href="https://docs.docker.com/get-started/get-docker/" rel="noopener" target="_blank">Choose the Docker installer for your system ↗</a></div>
+</article>
+<article class="security-card" data-agent="hermes">
+<div class="security-card-head"><span class="security-index">02</span><div><h3>Turn on the Hermes Docker backend</h3><p>Hermes runs its terminal, file and code tools inside a container. The application itself stays on your computer.</p></div></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Edit settings</span><button class="copy-btn" data-copy="hermes config edit">Copy</button></div><pre><code>hermes config edit</code></pre></div>
+<p class="security-note">Merge these keys into the <code>terminal:</code> section of your profile configuration, usually <code>~/.hermes/config.yaml</code>. Do not create a second <code>terminal:</code> key.</p>
+<div class="code-card"><div class="code-head"><span class="code-label">Hermes · Docker backend</span><button class="copy-btn">Copy</button></div><pre><code>terminal:
+  backend: docker
+  docker_mount_cwd_to_workspace: true
+  docker_network: false
+  docker_forward_env: []
+  container_persistent: false</code></pre></div>
+<ul class="security-points"><li>Network access is off for container commands, and no host environment variables are forwarded.</li><li>Each session gets a fresh container. CPU and memory limits use the Hermes defaults.</li><li>Open your <code>AI_Workspace</code> folder in Hermes, or start the CLI from it.</li></ul>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Check Hermes configuration · CLI</span><button class="copy-btn" data-copy="hermes config check">Copy</button></div><pre><code>hermes config check</code></pre></div>
+</article>
+<article class="security-card" data-agent="goose" hidden>
+<div class="security-card-head"><span class="security-index">02</span><div><h3>Build a Goose tools image</h3><p>Goose can run selected extensions inside a container. The application and your model provider stay on your computer.</p></div></div>
+<p class="security-note">Save this file as <code>Dockerfile</code> in an empty folder, then build it from that folder.</p>
+<div class="code-card"><div class="code-head"><span class="code-label">Dockerfile · Goose extension tools</span><button class="copy-btn">Copy</button></div><pre><code data-copy-dockerfile>FROM ubuntu:24.04
+RUN apt-get update &amp;&amp; apt-get install -y --no-install-recommends ca-certificates curl bzip2 bash git python3 python3-venv nodejs npm &amp;&amp; rm -rf /var/lib/apt/lists/*
+RUN curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh -o /tmp/install-goose.sh \
+    &amp;&amp; CONFIGURE=false bash /tmp/install-goose.sh \
+    &amp;&amp; install -m 0755 /root/.local/bin/goose /usr/local/bin/goose \
+    &amp;&amp; rm -f /tmp/install-goose.sh \
+    &amp;&amp; rm -rf /root/.local
+ENV HOME=/tmp
+WORKDIR /workspace
+CMD ["sleep", "infinity"]</code></pre></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Build image · macOS / Linux</span><button class="copy-btn" data-copy="docker build -t goose-tools:local .">Copy</button></div><pre><code>docker build -t goose-tools:local .</code></pre></div>
+</article>
+<article class="security-card" data-agent="goose" hidden>
+<div class="security-card-head"><span class="security-index">03</span><div><h3>Start the container and a Goose session</h3><p>Start the container with limited permissions and no network, then connect the Goose CLI to it. Adjust the resource limits to what your computer can spare.</p></div></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Install Goose CLI · macOS / Linux</span><button class="copy-btn">Copy</button></div><pre><code>curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | CONFIGURE=false bash</code></pre></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Start Goose tools container</span><button class="copy-btn">Copy</button></div><pre><code>WORKSPACE_DIR="$HOME/AI_Workspace"
+CONTAINER_MEMORY="4g"
+CONTAINER_CPUS="2"
+CONTAINER_PIDS="256"
+TMPFS_SIZE="512m"
+
+docker run -d --name goose-tools --init \
+  --cap-drop ALL \
+  --security-opt no-new-privileges \
+  --read-only --tmpfs "/tmp:rw,nosuid,nodev,size=${TMPFS_SIZE}" \
+  --pids-limit "$CONTAINER_PIDS" --memory "$CONTAINER_MEMORY" --cpus "$CONTAINER_CPUS" \
+  --user "$(id -u):$(id -g)" --env HOME=/tmp \
+  --network none \
+  --mount "type=bind,source=${WORKSPACE_DIR},target=/workspace" \
+  --workdir /workspace goose-tools:local</code></pre></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Goose CLI · macOS / Linux</span><button class="copy-btn" data-copy="goose session --container goose-tools">Copy</button></div><pre><code>goose session --container goose-tools</code></pre></div>
+<div class="code-card"><div class="code-head"><span class="code-label">Terminal · Stop and remove container</span><button class="copy-btn" data-copy="docker rm -f goose-tools">Copy</button></div><pre><code>docker rm -f goose-tools</code></pre></div>
+<p class="security-note">Goose Desktop does not use this container automatically. The <code>--container</code> option belongs to the CLI workflow and isolates only the configured extensions.</p>
+</article>
+</div>
+<div class="warning"><strong>Security limits:</strong> no container configuration guarantees protection. Never mount your home directory, browser profile, SSH folder, cloud credentials or the Docker socket. The agent can change or delete files in the mounted workspace, so keep backups<sup class="cite" data-k="owasp"></sup>.</div></div></section>
+<section class="launch-section" id="launch"><div class="wrap section-inner">
+<div class="kicker">Ready for a session</div><h2>How to launch and use your agent</h2><p class="intro">This section covers the everyday steps for starting your agent after installation and model setup. It does not repeat the download instructions.</p>
+<div class="launch-grid">
+<article class="launch-card" style="--tint:var(--pink);--edge:var(--pink-line);--accent:var(--pink-ink)"><h3>Hermes Agent</h3><p class="launch-lead">The standard desktop setup uses a local model managed by Hermes. Once the model is installed, you can use Hermes through its graphical interface without running terminal commands.</p>
+<div class="launch-step"><span class="launch-num">1</span><p>Open <strong>Hermes Desktop</strong> from your Applications folder or system app launcher.</p></div>
+<div class="launch-step"><span class="launch-num">2</span><p>Open the model selector and choose the local model you set up earlier in <strong>Local Models</strong>.</p></div>
+<div class="launch-step"><span class="launch-num">3</span><p>Start a new conversation. Give Hermes access only to the tools and project folder needed for that task.</p></div>
+<div class="launch-step"><span class="launch-num">4</span><p>Review approval prompts before allowing file changes, terminal commands or other sensitive actions.</p></div>
+<div class="path-note" style="background:var(--pink);color:var(--pink-ink)">The Local Models option uses Hermes’ built in llama.cpp runtime and downloads models through the desktop interface. It does not install Ollama. To use an existing Ollama service with Hermes, configure it separately as a provider.</div>
+</article>
+<article class="launch-card" style="--tint:var(--yellow);--edge:var(--yellow-line);--accent:var(--yellow-ink)"><h3>Goose with Ollama</h3><p class="launch-lead">Ollama serves the local model. Goose connects to that service and uses extensions to perform approved tasks.</p>
+<div class="launch-step"><span class="launch-num">1</span><p>Start the <strong>Ollama</strong> application or service. Confirm that the model you selected during setup is available.</p></div>
+<div class="launch-step"><span class="launch-num">2</span><p>Open <strong>Goose Desktop</strong>. In its model settings, choose <strong>Ollama</strong> as the provider and select the model already downloaded.</p></div>
+<div class="launch-step"><span class="launch-num">3</span><p>Before enabling extensions, open <strong>Settings → Chat → Default Mode</strong> and choose <strong>Manual Approval</strong> or <strong>Smart Approval</strong>. Autonomous mode is the default. Changing the default affects new sessions only, so check the mode of the session you are using<sup class="cite" data-k="goosepermissions"></sup>.</p></div>
+<div class="launch-step"><span class="launch-num">4</span><p>Enable only the extensions required for the task. Check their commands and access permissions before use.</p></div>
+<div class="path-note" style="background:var(--yellow);color:var(--yellow-ink)">To run configured extensions in the Docker container through the separate CLI workflow, start a session with <code>goose session --container goose-tools</code>. This does not place the entire Goose Desktop app inside Docker.</div>
+</article>
+</div>
+</div></section>
+<section class="download-section" id="downloads"><div class="wrap section-inner">
+<div class="download-layout"><div class="download-aside"><div class="kicker">Official resources</div><h2>Everything in one place</h2><p>Download the tools required for your chosen setup. The remaining links are optional resources for exploring the technology further.</p></div>
+<div class="download-groups">
+<div class="download-group" style="--group-ink:var(--pink-ink);--group-edge:var(--pink-line);--group-tint:var(--pink)"><h3>Agent applications</h3>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>Hermes Desktop</strong><small>Personal assistant with local model management</small></div></div><a class="download-link" href="https://hermes-agent.nousresearch.com/docs/getting-started/installation" rel="noopener" target="_blank">Download ↗</a></div>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>Goose Desktop and CLI</strong><small>General purpose agent with MCP extensions</small></div></div><a class="download-link" href="https://goose-docs.ai/docs/getting-started/installation/" rel="noopener" target="_blank">Download ↗</a></div>
+</div>
+<div class="download-group" style="--group-ink:var(--blue-ink);--group-edge:var(--blue-line);--group-tint:var(--blue)"><h3>Local model runtimes</h3>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>Ollama</strong><small>Local model runtime for Goose or custom setups</small></div></div><a class="download-link" href="https://ollama.com/download" rel="noopener" target="_blank">Download ↗</a></div>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>LM Studio</strong><small>Desktop interface for local language models</small></div></div><a class="download-link" href="https://lmstudio.ai/" rel="noopener" target="_blank">Download ↗</a></div>
+</div>
+<div class="download-group" style="--group-ink:var(--mint-ink);--group-edge:var(--mint-line);--group-tint:var(--mint)"><h3>Isolation and containers</h3>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>Docker Desktop or Docker Engine</strong><small>Choose the supported installation for macOS, Windows or Linux</small></div></div><a class="download-link" href="https://docs.docker.com/get-started/get-docker/" rel="noopener" target="_blank">Get Docker ↗</a></div>
+</div>
+<div class="download-group" style="--group-ink:var(--lav-ink);--group-edge:var(--lav-line);--group-tint:var(--lav)"><h3>Further reading</h3>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>Model Context Protocol</strong><small>Standard for connecting agents to tools and data</small></div></div><a class="download-link" href="https://modelcontextprotocol.io/" rel="noopener" target="_blank">Explore ↗</a></div>
+<div class="download-row"><div class="download-name"><span class="download-bullet"></span><div><strong>llama.cpp</strong><small>Local inference engine used by many tools</small></div></div><a class="download-link" href="https://github.com/ggml-org/llama.cpp" rel="noopener" target="_blank">Explore ↗</a></div>
+<div class="download-row mlx-row"><div class="download-name"><span class="download-bullet"></span><div><strong>MLX</strong><small>Machine learning framework for Apple silicon</small></div></div><a class="download-link" href="https://github.com/ml-explore/mlx" rel="noopener" target="_blank">Explore ↗</a></div>
+<div class="download-group infographic-title"><h3>Downloadable infographics</h3></div>
+<div class="infographics-grid" aria-label="Downloadable infographics">
+<figure class="infographic-card">
+<div class="infographic-thumb">
+<img src="assets/images/ai_agent_loop.png" alt="AI Agent Loop infographic" loading="lazy" decoding="async">
+<span class="infographic-placeholder" aria-hidden="true">ai_agent_loop.png</span>
+<a class="infographic-download" href="assets/images/ai_agent_loop.png" download="ai_agent_loop.png" aria-label="Download AI Agent Loop infographic" aria-disabled="true" tabindex="-1">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+</a>
+</div>
+<figcaption>AI Agent Loop</figcaption>
+</figure>
+<figure class="infographic-card">
+<div class="infographic-thumb">
+<img src="assets/images/build_your_local_ai_agent.png" alt="Build Your Local AI Agent infographic" loading="lazy" decoding="async">
+<span class="infographic-placeholder" aria-hidden="true">build_your_local_ai_agent.png</span>
+<a class="infographic-download" href="assets/images/build_your_local_ai_agent.png" download="build_your_local_ai_agent.png" aria-label="Download Build Your Local AI Agent infographic" aria-disabled="true" tabindex="-1">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+</a>
+</div>
+<figcaption>Build Your Local AI Agent</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="references"><div class="wrap"><div class="kicker">Sources</div><h2>References</h2><p class="intro">The numbered markers point to the references below. Select any reference to open its source. Documentation and model pages were checked on 10 November 2026. Product details, commands and interfaces may change, so check the linked official documentation before use.</p><ol class="refs" id="refs"></ol></div></section>
+</main>
+<footer><p class="footer-credit">Created by <a class="footer-author" href="https://www.linkedin.com/in/vasilis-efstathiou/" target="_blank" rel="noopener noreferrer">Vasilis Efstathiou</a></p><p class="footer-note">An independent educational guide, not affiliated with or endorsed by the projects it mentions. Product names and trademarks belong to their respective owners. Instructions change between versions, so consult the official documentation before use. Last reviewed 10 November 2026.</p></footer>
+
+
+
+
+<script src="assets/js/agent-loop.js"></script>
+<script src="assets/js/agent-setup.js"></script>
+<script src="assets/js/copy-buttons.js"></script>
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/scroll-effects.js"></script>
+<script src="assets/js/memory-planner.js"></script>
+<script src="assets/js/references.js"></script>
+<script src="assets/js/theme-toggle.js"></script>
+<script src="assets/js/security-tabs.js"></script>
+<script src="assets/js/infographics.js"></script>
+</body>
+</html>
